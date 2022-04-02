@@ -24,10 +24,10 @@ public class GameManager : MonoBehaviour
     private int survivalTime = 0;
     [SerializeField] private GameObject resultPanel;
     [SerializeField] private TextMeshProUGUI resultTxt;
-    [SerializeField] private SpaceFinder finder;
+    [SerializeField] private ClickHandler finder;
     public static bool isInventryItem;
 
-    [SerializeField]  private EnemyMovement[] enemies;
+    [SerializeField]  private EnemyController[] enemies;
 
 
     private void Awake()

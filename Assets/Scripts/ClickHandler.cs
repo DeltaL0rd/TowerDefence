@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpaceFinder : MonoBehaviour
+public class ClickHandler : MonoBehaviour
 {
     private Ray ray;
     private RaycastHit hit;

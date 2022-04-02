@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : PoolObject
 {
     [SerializeField] private Transform target;
     public float speed = 50f;
@@ -14,11 +14,16 @@ public class Bullet : MonoBehaviour
     {
         if(target == null || !target.gameObject.activeInHierarchy)
         {
-            Destroy(gameObject);
+            SetStatus(false);
             return;
         }
         Vector3 dir = target.position - transform.position;
         float dis = speed * Time.deltaTime;
         transform.Translate(dir.normalized * dis, Space.World);
+    }
+
+    protected override void CheckActive()
+    {
+       
     }
 }

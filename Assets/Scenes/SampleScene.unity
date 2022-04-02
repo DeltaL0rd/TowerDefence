@@ -414,6 +414,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4354668066157054001, guid: 5d2e837ba9f2b9c4bb29faf69cd2cfb8, type: 3}
+      propertyPath: FireRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354668066157054001, guid: 5d2e837ba9f2b9c4bb29faf69cd2cfb8, type: 3}
+      propertyPath: bulletPool
+      value: 
+      objectReference: {fileID: 883072491}
     - target: {fileID: 4364960032458646780, guid: 5d2e837ba9f2b9c4bb29faf69cd2cfb8, type: 3}
       propertyPath: m_Radius
       value: 1.91
@@ -1264,6 +1272,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022070703}
     m_Modifications:
+    - target: {fileID: 1947057959172473124, guid: 876a843a1e0e7e441a6da91ed0055bc5, type: 3}
+      propertyPath: FireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947057959172473124, guid: 876a843a1e0e7e441a6da91ed0055bc5, type: 3}
+      propertyPath: bulletPool
+      value: 
+      objectReference: {fileID: 1441231556}
     - target: {fileID: 5987782642712270717, guid: 876a843a1e0e7e441a6da91ed0055bc5, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -2146,6 +2162,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859610463}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &883072490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 883072492}
+  - component: {fileID: 883072491}
+  m_Layer: 0
+  m_Name: RocketPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &883072491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883072490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40bda3d681f525246a7e954b19330c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 20
+  objectPrefab: {fileID: 5785467435088674639, guid: f52cb1cb3a527c14190098f0c1080e4c, type: 3}
+  pool: []
+  poolParent: {fileID: 883072492}
+--- !u!4 &883072492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883072490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.4392257, y: -2.696957, z: 6.3731027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &915002899
 GameObject:
   m_ObjectHideFlags: 0
@@ -3376,6 +3439,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8c425f85c377a74d8ff1e311e7a43d9, type: 3}
+--- !u!1 &1441231555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1441231557}
+  - component: {fileID: 1441231556}
+  m_Layer: 0
+  m_Name: BulletPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1441231556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441231555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ae61b64899b1b4e971a9adfd80867a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 20
+  objectPrefab: {fileID: 6824310673380826184, guid: 7cfc86ea2964eaf4889e47b803495cb0, type: 3}
+  pool: []
+  poolParent: {fileID: 1441231557}
+--- !u!4 &1441231557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441231555}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.4392257, y: -2.696957, z: 6.3731027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1463166196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5561,6 +5671,10 @@ PrefabInstance:
       propertyPath: FireRate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1947057959172473124, guid: 876a843a1e0e7e441a6da91ed0055bc5, type: 3}
+      propertyPath: bulletPool
+      value: 
+      objectReference: {fileID: 1441231556}
     - target: {fileID: 5987782642712270717, guid: 876a843a1e0e7e441a6da91ed0055bc5, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -5635,6 +5749,10 @@ PrefabInstance:
       propertyPath: FireRate
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4354668066157054001, guid: 5d2e837ba9f2b9c4bb29faf69cd2cfb8, type: 3}
+      propertyPath: bulletPool
+      value: 
+      objectReference: {fileID: 883072491}
     - target: {fileID: 4364960032458646780, guid: 5d2e837ba9f2b9c4bb29faf69cd2cfb8, type: 3}
       propertyPath: m_Radius
       value: 1.91

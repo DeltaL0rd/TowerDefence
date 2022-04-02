@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine.AI;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     [SerializeField] private Transform goal;
     [SerializeField] private NavMeshAgent agent;
@@ -76,7 +76,7 @@ public class EnemyMovement : MonoBehaviour
         else if (other.CompareTag("Bullet"))
         {
             TakeDamage(10f);
-            Destroy(other.gameObject);
+            other.GetComponent<PoolObject>().SetStatus(false);
         }
     }
 }

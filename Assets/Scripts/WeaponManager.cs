@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponLook : MonoBehaviour
+public class WeaponManager : MonoBehaviour
 {
     [SerializeField] private Transform TopArea;
     [SerializeField]private Transform muzzle;
     [SerializeField] private GameObject bullet;
     [SerializeField] private GameObject target;
     [SerializeField] private float FireRate;
+    [SerializeField] private PoolBase bulletPool;
 
     private void Start()
     {
@@ -36,9 +35,12 @@ public class WeaponLook : MonoBehaviour
     {
         if (target != null)
         {
-            GameObject newBullet = Instantiate(bullet, muzzle.position, muzzle.rotation);
 
+            // TODO: use BulletPool.GetObject();
+
+            var newBullet = bulletPool.GetObject();
             Bullet b = newBullet.GetComponent<Bullet>();
+            b.SetStatus(true);
             b.GetTarget(target.transform);
 
             newBullet.transform.localPosition = muzzle.transform.position;
