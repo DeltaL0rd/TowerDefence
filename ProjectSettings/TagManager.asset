@@ -6,6 +6,10 @@ TagManager:
   tags:
   - SpawnPoint
   - Goal
+  - Weapon
+  - Power_0
+  - Power_1
+  - Bullet
   layers:
   - Default
   - TransparentFX
