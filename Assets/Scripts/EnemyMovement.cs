@@ -31,9 +31,10 @@ public class EnemyMovement : MonoBehaviour
          health -= damage;
         if (health < 1)
         {
+            DropPowerUp();
             agent.speed = 0f;
             anim.SetBool("isDead", true);
-            DropPowerUp();
+           
             Invoke("HideBody", 3f);
         }
         else
@@ -46,7 +47,7 @@ public class EnemyMovement : MonoBehaviour
         if (isHavingPowerUp)
         {
             powerups[powerUpID].SetActive(true);
-            powerups[powerUpID].transform.localPosition = transform.localPosition;
+            powerups[powerUpID].transform.position = new Vector3(transform.position.x, 1f, transform.position.z);
         }
         else
         {
